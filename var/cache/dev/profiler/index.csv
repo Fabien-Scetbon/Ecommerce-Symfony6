@@ -21,3 +21,15 @@ ceab3b,::1,GET,http://localhost:8000/connexion,1675440048,,200
 a583ce,::1,GET,http://localhost:8000/connexion,1675440069,,200
 999fa1,::1,POST,http://localhost:8000/connexion,1675440113,,302
 c836b0,::1,GET,http://localhost:8000/connexion,1675440113,,200
+9cd021,::1,GET,http://localhost:8000/connexion,1675440709,,200
+5c443f,::1,POST,http://localhost:8000/connexion,1675440721,,302
+4dd07d,::1,GET,http://localhost:8000/connexion,1675440721,,200
+f0b62a,::1,GET,http://localhost:8000/inscription,1675440750,6392b9,500
+6392b9,::1,GET,http://localhost:8000/inscription,1675440750,,500
+9f1213,::1,GET,http://localhost:8000/inscription,1675440824,,200
+f598aa,::1,GET,http://localhost:8000/inscription,1675440960,,200
+1818f1,::1,GET,http://localhost:8000/inscription,1675441713,,200
+d6ecd5,::1,GET,http://localhost:8000/inscription,1675442429,baf562,500
+baf562,::1,GET,http://localhost:8000/inscription,1675442429,,500
+8d068a,::1,GET,http://localhost:8000/inscription,1675443117,,200
+07d0f6,::1,GET,http://localhost:8000/inscription,1675443160,,200
