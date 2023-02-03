@@ -46,30 +46,52 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
         // line 1
         echo "<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset=\"UTF-8\">
-        <title>";
-        // line 5
+\t<head>
+\t\t<meta charset=\"UTF-8\">
+\t\t<title>
+\t\t\t";
+        // line 6
         $this->displayBlock('title', $context, $blocks);
-        echo "</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
-        ";
-        // line 8
-        echo "        ";
-        $this->displayBlock('stylesheets', $context, $blocks);
+        echo " - Site e-commerce Symfony 6
+\t\t</title>
+\t\t<link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+
+\t\t<link rel=\"stylesheet\" href=\"";
         // line 11
-        echo "
-        ";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/bootstrap.min.css"), "html", null, true);
+        echo "\"> ";
+        $this->displayBlock('stylesheets', $context, $blocks);
         // line 12
-        $this->displayBlock('javascripts', $context, $blocks);
+        echo "\t\t<link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/styles.css"), "html", null, true);
+        echo "\">
+
+\t\t<script src=\"";
+        // line 14
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.bundle.min.js"), "html", null, true);
+        echo "\" defer></script>
+\t\t";
         // line 15
-        echo "    </head>
-    <body>
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 16
+        echo "\t\t<script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/scripts.js"), "html", null, true);
+        echo "\" defer></script>
+
+\t</head>
+\t<body>
         ";
-        // line 17
+        // line 20
+        $this->loadTemplate("_partials/_nav.html.twig", "base.html.twig", 20)->display($context);
+        // line 21
+        echo "\t\t";
         $this->displayBlock('body', $context, $blocks);
-        // line 18
-        echo "    </body>
+        // line 22
+        echo "        ";
+        $this->loadTemplate("_partials/_footer.html.twig", "base.html.twig", 22)->display($context);
+        // line 23
+        echo "\t</body>
 </html>
 ";
         
@@ -80,7 +102,7 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
 
     }
 
-    // line 5
+    // line 6
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -90,7 +112,7 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
+        echo "Accueil";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -99,7 +121,7 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
 
     }
 
-    // line 8
+    // line 11
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -109,11 +131,6 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 9
-        echo "            ";
-        echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_link_tags')->getCallable()("app"), "html", null, true);
-        echo "
-        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -122,7 +139,7 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
 
     }
 
-    // line 12
+    // line 15
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -132,11 +149,6 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 13
-        echo "            ";
-        echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
-        echo "
-        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -145,7 +157,7 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
 
     }
 
-    // line 17
+    // line 21
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -168,31 +180,41 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  149 => 17,  136 => 13,  126 => 12,  113 => 9,  103 => 8,  84 => 5,  72 => 18,  70 => 17,  66 => 15,  64 => 12,  61 => 11,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  161 => 21,  143 => 15,  125 => 11,  106 => 6,  94 => 23,  91 => 22,  88 => 21,  86 => 20,  78 => 16,  76 => 15,  72 => 14,  66 => 12,  62 => 11,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+\t<head>
+\t\t<meta charset=\"UTF-8\">
+\t\t<title>
+\t\t\t{% block title %}Accueil{% endblock %} - Site e-commerce Symfony 6
+\t\t</title>
+\t\t<link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+\t\t<link rel=\"stylesheet\" href=\"{{ asset('assets/css/bootstrap.min.css') }}\"> {% block stylesheets %}{% endblock %}
+\t\t<link rel=\"stylesheet\" href=\"{{ asset('assets/css/styles.css') }}\">
+
+\t\t<script src=\"{{ asset('assets/js/bootstrap.bundle.min.js') }}\" defer></script>
+\t\t{% block javascripts %}{% endblock %}
+\t\t<script src=\"{{ asset('assets/js/scripts.js') }}\" defer></script>
+
+\t</head>
+\t<body>
+        {% include \"_partials/_nav.html.twig\" %}
+\t\t{% block body %}{% endblock %}
+        {% include \"_partials/_footer.html.twig\" %}
+\t</body>
 </html>
 ", "base.html.twig", "/home/fabino/programmation/Symfony/e-commerce/templates/base.html.twig");
     }
