@@ -14,3 +14,10 @@ d6b3bb,::1,GET,http://localhost:8000/,1675435815,,200
 a1f657,::1,GET,http://localhost:8000/,1675438553,,200
 94546e,::1,GET,http://localhost:8000/,1675438659,,200
 f202b9,::1,GET,http://localhost:8000/,1675438727,,200
+c3ed4a,::1,GET,http://localhost:8000/connexion,1675439561,,200
+47d0d4,::1,GET,http://localhost:8000/connexion,1675439871,,200
+709492,::1,GET,http://localhost:8000/connexion,1675439924,,200
+ceab3b,::1,GET,http://localhost:8000/connexion,1675440048,,200
+a583ce,::1,GET,http://localhost:8000/connexion,1675440069,,200
+999fa1,::1,POST,http://localhost:8000/connexion,1675440113,,302
+c836b0,::1,GET,http://localhost:8000/connexion,1675440113,,200

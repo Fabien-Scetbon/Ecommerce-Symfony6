@@ -60,21 +60,24 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
 \t\t<link rel=\"stylesheet\" href=\"";
         // line 11
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/bootstrap.min.css"), "html", null, true);
-        echo "\"> ";
-        $this->displayBlock('stylesheets', $context, $blocks);
+        echo "\">
+        ";
         // line 12
-        echo "\t\t<link rel=\"stylesheet\" href=\"";
+        $this->displayBlock('stylesheets', $context, $blocks);
+        echo "  <!-- evite d'utiliser parent() -->
+\t\t<link rel=\"stylesheet\" href=\"";
+        // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/styles.css"), "html", null, true);
         echo "\">
 
 \t\t<script src=\"";
-        // line 14
+        // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\" defer></script>
 \t\t";
-        // line 15
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 16
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 17
         echo "\t\t<script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/scripts.js"), "html", null, true);
         echo "\" defer></script>
@@ -82,15 +85,15 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
 \t</head>
 \t<body>
         ";
-        // line 20
-        $this->loadTemplate("_partials/_nav.html.twig", "base.html.twig", 20)->display($context);
         // line 21
+        $this->loadTemplate("_partials/_nav.html.twig", "base.html.twig", 21)->display($context);
+        // line 22
         echo "\t\t";
         $this->displayBlock('body', $context, $blocks);
-        // line 22
-        echo "        ";
-        $this->loadTemplate("_partials/_footer.html.twig", "base.html.twig", 22)->display($context);
         // line 23
+        echo "        ";
+        $this->loadTemplate("_partials/_footer.html.twig", "base.html.twig", 23)->display($context);
+        // line 24
         echo "\t</body>
 </html>
 ";
@@ -121,7 +124,7 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
 
     }
 
-    // line 11
+    // line 12
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -139,7 +142,7 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
 
     }
 
-    // line 15
+    // line 16
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -157,7 +160,7 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
 
     }
 
-    // line 21
+    // line 22
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -187,7 +190,7 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
 
     public function getDebugInfo()
     {
-        return array (  161 => 21,  143 => 15,  125 => 11,  106 => 6,  94 => 23,  91 => 22,  88 => 21,  86 => 20,  78 => 16,  76 => 15,  72 => 14,  66 => 12,  62 => 11,  54 => 6,  47 => 1,);
+        return array (  164 => 22,  146 => 16,  128 => 12,  109 => 6,  97 => 24,  94 => 23,  91 => 22,  89 => 21,  81 => 17,  79 => 16,  75 => 15,  70 => 13,  66 => 12,  62 => 11,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -202,7 +205,8 @@ class __TwigTemplate_e5780f61db56c8bfdfd48f01a2aa5524 extends Template
 \t\t<link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
 \t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
 
-\t\t<link rel=\"stylesheet\" href=\"{{ asset('assets/css/bootstrap.min.css') }}\"> {% block stylesheets %}{% endblock %}
+\t\t<link rel=\"stylesheet\" href=\"{{ asset('assets/css/bootstrap.min.css') }}\">
+        {% block stylesheets %}{% endblock %}  <!-- evite d'utiliser parent() -->
 \t\t<link rel=\"stylesheet\" href=\"{{ asset('assets/css/styles.css') }}\">
 
 \t\t<script src=\"{{ asset('assets/js/bootstrap.bundle.min.js') }}\" defer></script>
