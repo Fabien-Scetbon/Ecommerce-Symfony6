@@ -107,40 +107,45 @@ class __TwigTemplate_895f55fb2d43a50fa76ee28f21d9381d extends Template
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "user", [], "any", false, false, false, 16)) {
             // line 17
             echo "\t\t\t\t\t\t<div class=\"mb-3\">
-\t\t\t\t\t\t\tVous êtes connecté(e) comme ";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "user", [], "any", false, false, false, 18), "userIdentifier", [], "any", false, false, false, 18), "html", null, true);
+\t\t\t\t\t\t\tVous êtes connecté(e) comme
+\t\t\t\t\t\t\t";
+            // line 19
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19), "userIdentifier", [], "any", false, false, false, 19), "html", null, true);
             echo ",
 \t\t\t\t\t\t\t<a href=\"";
-            // line 19
+            // line 20
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Deconnexion</a>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t";
         }
-        // line 22
+        // line 23
         echo "
 \t\t\t\t\t<h1 class=\"h3 mb-3 font-weight-normal\">Connexion</h1>
 \t\t\t\t\t<label for=\"inputEmail\">Email</label>
 \t\t\t\t\t<input type=\"email\" value=\"";
-        // line 25
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 25, $this->source); })()), "html", null, true);
+        // line 26
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 26, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
 \t\t\t\t\t<label for=\"inputPassword\">Mot de passe</label>
 \t\t\t\t\t<input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
 
 \t\t\t\t\t<input
 \t\t\t\t\ttype=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 30
+        // line 31
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\">
 
 \t\t\t\t\t";
-        // line 42
+        // line 43
         echo "
 \t\t\t\t\t<button class=\"btn btn-lg btn-primary mt-3\" type=\"submit\">
 \t\t\t\t\t\tConnexion
 \t\t\t\t\t</button>
+\t\t\t\t\t<a href=\"";
+        // line 47
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        echo "\" class=\"btn btn-secondary mt-3\">M'inscrire</a>
 \t\t\t\t</form>
 \t\t\t</div>
 \t\t</div>
@@ -166,7 +171,7 @@ class __TwigTemplate_895f55fb2d43a50fa76ee28f21d9381d extends Template
 
     public function getDebugInfo()
     {
-        return array (  140 => 42,  135 => 30,  127 => 25,  122 => 22,  116 => 19,  112 => 18,  109 => 17,  107 => 16,  104 => 15,  98 => 13,  96 => 12,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  147 => 47,  141 => 43,  136 => 31,  128 => 26,  123 => 23,  117 => 20,  113 => 19,  109 => 17,  107 => 16,  104 => 15,  98 => 13,  96 => 12,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -188,7 +193,8 @@ class __TwigTemplate_895f55fb2d43a50fa76ee28f21d9381d extends Template
 
 \t\t\t\t\t{% if app.user %}
 \t\t\t\t\t\t<div class=\"mb-3\">
-\t\t\t\t\t\t\tVous êtes connecté(e) comme {{ app.user.userIdentifier }},
+\t\t\t\t\t\t\tVous êtes connecté(e) comme
+\t\t\t\t\t\t\t{{ app.user.userIdentifier }},
 \t\t\t\t\t\t\t<a href=\"{{ path('app_logout') }}\">Deconnexion</a>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t{% endif %}
@@ -203,19 +209,20 @@ class __TwigTemplate_895f55fb2d43a50fa76ee28f21d9381d extends Template
 \t\t\t\t\ttype=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token('authenticate') }}\">
 
 \t\t\t\t\t{#
-                            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                            See https://symfony.com/doc/current/security/remember_me.html
-                    
-                            <div class=\"checkbox mb-3\">
-                                <label>
-                                    <input type=\"checkbox\" name=\"_remember_me\"> Remember me
-                                </label>
-                            </div>
-\t\t\t\t\t#}
+\t\t\t\t\tUncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+\t\t\t\t\tSee https://symfony.com/doc/current/security/remember_me.html
+\t\t\t
+\t\t\t\t\t<div class=\"checkbox mb-3\">
+\t\t\t\t\t\t<label>
+\t\t\t\t\t\t\t<input type=\"checkbox\" name=\"_remember_me\"> Remember me
+\t\t\t\t\t\t</label>
+\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t#}
 
 \t\t\t\t\t<button class=\"btn btn-lg btn-primary mt-3\" type=\"submit\">
 \t\t\t\t\t\tConnexion
 \t\t\t\t\t</button>
+\t\t\t\t\t<a href=\"{{ path('app_register') }}\" class=\"btn btn-secondary mt-3\">M'inscrire</a>
 \t\t\t\t</form>
 \t\t\t</div>
 \t\t</div>

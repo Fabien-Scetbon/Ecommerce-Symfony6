@@ -137,10 +137,14 @@ class __TwigTemplate_375b8d5a6829fe01a9d2114d9430affa extends Template
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 30, $this->source); })()), "RGPDConsent", [], "any", false, false, false, 30), 'row');
         echo "
 
-\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-lg my-3\">S'inscire</button>
-\t\t\t\t";
+\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-lg my-3\">M'inscrire</button>
+                <a href=\"";
         // line 33
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 33, $this->source); })()), 'form_end');
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        echo "\" class=\"btn btn-secondary\">Me connecter</a>
+\t\t\t\t";
+        // line 34
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 34, $this->source); })()), 'form_end');
         echo "
 \t\t\t</div>
 \t\t</div>
@@ -166,7 +170,7 @@ class __TwigTemplate_375b8d5a6829fe01a9d2114d9430affa extends Template
 
     public function getDebugInfo()
     {
-        return array (  143 => 33,  137 => 30,  134 => 29,  132 => 27,  126 => 24,  122 => 23,  118 => 22,  110 => 17,  106 => 16,  102 => 15,  95 => 11,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  147 => 34,  143 => 33,  137 => 30,  134 => 29,  132 => 27,  126 => 24,  122 => 23,  118 => 22,  110 => 17,  106 => 16,  102 => 15,  95 => 11,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -202,7 +206,8 @@ class __TwigTemplate_375b8d5a6829fe01a9d2114d9430affa extends Template
         }) }}
 \t\t\t\t{{ form_row(registrationForm.RGPDConsent) }}
 
-\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-lg my-3\">S'inscire</button>
+\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-lg my-3\">M'inscrire</button>
+                <a href=\"{{ path('app_login') }}\" class=\"btn btn-secondary\">Me connecter</a>
 \t\t\t\t{{ form_end(registrationForm) }}
 \t\t\t</div>
 \t\t</div>
