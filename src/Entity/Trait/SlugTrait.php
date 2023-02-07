@@ -4,7 +4,7 @@ namespace App\Entity\Trait;
 
 use Doctrine\ORM\Mapping as ORM;
 
-trait SlugTrait
+trait SlugTrait  // permet d'avoir des urls personnalisées (nom de produit) plutot que des id
 {
     #[ORM\Column(type: 'string', length: 255)]
     private $slug;
