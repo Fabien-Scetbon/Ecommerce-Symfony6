@@ -78,3 +78,7 @@ ca3c35,::1,GET,http://localhost:8000/inscription,1675675509,,200
 17967f,::1,GET,http://localhost:8000/inscription,1675675516,,200
 8cb81e,::1,GET,http://localhost:8000/connexion,1675675517,,200
 92af4c,::1,GET,http://localhost:8000/connexion,1675675570,,200
+c32e5b,::1,GET,http://localhost:8000/connexion,1675692585,,200
+a1f466,::1,GET,http://localhost:8000/inscription,1675692619,,200
+5f34b6,::1,GET,http://localhost:8000/connexion,1675692623,,200
+7e5370,::1,GET,http://localhost:8000/,1675758061,,200
