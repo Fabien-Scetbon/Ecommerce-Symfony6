@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{# http://localhost:8000/_error/404 pour voir la page 404 en restant en mode dev #}
+
+{% block title %}
+	Page 404
+{% endblock %}
+
+{% block body %}
+	<main class="container">
+		<section class="row">
+			<div class="col-12">
+				<h1>Page non trouvée</h1>
+				<p>La page n'existe pas</p>
+			</div>
+		</section>
+	</main>
+
+{% endblock %}
