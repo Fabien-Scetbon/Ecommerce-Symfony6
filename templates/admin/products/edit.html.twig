@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	Ajout d'un produit
+	Edition d'un produit
 {% endblock %}
 
 {% block body %}
     <main class="container">
 		<section class="row">
 			<div class="col-12">
-				<h1>Ajouter un produit</h1>
-                {% include "admin/products/_form.html.twig" %}
+				<h1>Editer un produit</h1>
+                {% include "admin/products/_form.html.twig" with {'button_label': 'Modifier'} %}
 			</div>
         </section>
     </main>
