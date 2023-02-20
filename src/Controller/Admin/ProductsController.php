@@ -3,7 +3,9 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Products;
+use App\Entity\Images;
 use App\Form\ProductsFormType;
+use App\Service\PictureService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,7 +24,7 @@ class ProductsController extends AbstractController
     }
 
     #[Route('/ajout', name: 'add')]
-    public function add(Request $request, EntityManagerInterface $em, SluggerInterface $slugger): Response
+    public function add(Request $request, EntityManagerInterface $em, SluggerInterface $slugger, PictureService $pictureService): Response
     {
         // on cree un nouveau produit
         $product = new Products();
@@ -36,6 +38,20 @@ class ProductsController extends AbstractController
 
         // on verifie si le form est soumis et valide
         if ($productForm->isSubmitted() && $productForm->isValid()) {
+            // on recupere les images
+            $images = $productForm->get('images')->getData();
+            foreach($images as $image) {
+
+                // on définit le dossier de destination
+                $folder ='products';
+
+                // on appelle le service d'ajout
+                $fichier = $pictureService->add($image, $folder, 300, 300);
+
+                $img = new Images();
+                $img->setName($fichier);
+                $product->addImage($img);
+            }
             // on genere le slug
             $slug = $slugger->slug($product->getName());
             $product->setSlug($slug);
@@ -90,7 +106,8 @@ class ProductsController extends AbstractController
         }
 
         return $this->render('admin/products/edit.html.twig', [
-            'productForm' => $productForm->createView()
+            'productForm' => $productForm->createView(),
+            'product' => $product
         ]);
         return $this->render('admin/products/index.html.twig');
     }
